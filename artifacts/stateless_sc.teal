@@ -1,0 +1,17 @@
+#pragma version 6
+txn RekeyTo
+global ZeroAddress
+==
+txn CloseRemainderTo
+global ZeroAddress
+==
+&&
+txn Amount
+int 1000000
+<=
+&&
+txn Receiver
+addr WRBVLPUHQZ5O2UIZAKYKKMOUSNPOFIL6ALUZQZLHBDUSIKXHAEEIELWBFQ
+==
+&&
+return
