@@ -11,7 +11,6 @@ const algodClient = new algosdk.Algodv2(
 // Accounts used
 const master = algosdk.mnemonicToSecretKey(process.env.MNEMONIC_CREATOR);
 const receiver = algosdk.mnemonicToSecretKey(process.env.ACC2_MNEMONIC);
-const acc1 = algosdk.mnemonicToSecretKey(process.env.ACC1_MNEMONIC);
 
 const submitToNetwork = async (signedTxn) => {
   // send txn

@@ -13,7 +13,7 @@ def stateless_sc():
     program = And(
         basic_checks(Txn),
         Txn.amount() <= Int(1000000),
-        Txn.receiver() == Addr("WRBVLPUHQZ5O2UIZAKYKKMOUSNPOFIL6ALUZQZLHBDUSIKXHAEEIELWBFQ")
+        Txn.receiver() == Addr("FCGJMWQAVL5G33FAELMNLFJ2LFOEFA5PD2FDF5CR77ZNOPLWASKFH7UWRU")
     )
 
     return program

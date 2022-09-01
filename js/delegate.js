@@ -44,7 +44,6 @@ const submitToNetwork = async (signedTxn) => {
 
   // use the logic signature of the delegated acc1 to sign transaction
   const receiver = algosdk.mnemonicToSecretKey(process.env.ACC2_MNEMONIC);
-  const master = algosdk.mnemonicToSecretKey(process.env.MNEMONIC_CREATOR);
   const txn = algosdk.makePaymentTxnWithSuggestedParamsFromObject({
     from: lsig.address(),
     to: receiver.addr,
