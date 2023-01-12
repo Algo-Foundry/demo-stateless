@@ -5,7 +5,7 @@ This repository contains sample codes to compile a stateless smart contract into
 
 ### Install packages
 ```
-npm install
+yarn install
 ```
 
 ### Update environement variables
