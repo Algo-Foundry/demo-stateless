@@ -39,6 +39,9 @@ const submitToNetwork = async (signedTxn) => {
   const sender = algosdk.mnemonicToSecretKey(process.env.ACC1_MNEMONIC);
   lsig.sign(sender.sk);
 
+  // sender balance before
+  const senderBalanceBefore = await algodClient.accountInformation(sender.addr).do();
+
   // get suggested parameters
   let suggestedParams = await algodClient.getTransactionParams().do();
 
@@ -55,4 +58,9 @@ const submitToNetwork = async (signedTxn) => {
   const lstx = algosdk.signLogicSigTransactionObject(txn, lsig);
 
   console.log(await submitToNetwork(lstx.blob));
+
+  const senderBalanceAfter = await algodClient.accountInformation(sender.addr).do();
+  
+  // 1 Algo + 1000 microAlgos (txn fee)
+  console.log("Amount Transacted:", senderBalanceBefore.amount - senderBalanceAfter.amount);
 })();
